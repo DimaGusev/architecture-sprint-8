@@ -21,6 +21,11 @@ const ReportPage: React.FC = () => {
           'Authorization': `Bearer ${keycloak.token}`
         }
       });
+      if (response.ok) {
+        alert(JSON.stringify(await response.json()));
+      } else{
+        alert("Status: " + response.status);
+      }
 
       
     } catch (err) {
